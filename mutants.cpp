@@ -8,7 +8,7 @@ Every day the municipal services of Minsk kill 'n' mutants. In how many days wil
 celebrate the victory over the mutants?
 */
 
-int main(void)
+int main()
 {
 	int m, p, n, day = 1;
 
@@ -30,5 +30,4 @@ int main(void)
 	}
 	cout << "A year has passed. I'm afraid no one survived..." << endl;
 	return 0;
-
 }

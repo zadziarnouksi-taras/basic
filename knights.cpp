@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -7,6 +8,38 @@ using namespace std;
 Enter 4 integers. These are the coordinates of the two knights on the chessboard. 
 Do they beat each other?
 */
+
+const string HORIZ_POS = "horizontal";
+const string VERT_POS = "vertical";
+const string FIRST = "first";
+const string SECOND = "second"; 
+
+
+bool check(int x1, int x2, int z1, int z2);
+void print(string position, string chessPieceNum);
+
+int main()
+{
+	int x1, x2, z1, z2;
+
+	print(HORIZ_POS,FIRST);
+	cin >> x1;
+	print(VERT_POS,FIRST);
+	cin >> z1;
+	print(HORIZ_POS,SECOND);
+	cin >> x2;
+	print(VERT_POS,SECOND);
+	cin >> z2;
+
+	if (check(x1,x2,z1,z2))
+	{
+		cout << "Beat each other." << endl;
+	}else 
+	{
+		cout << "NO beat each other." << endl;
+	}
+	return 0;
+}
 
 bool check(int x1, int x2, int z1, int z2)
 {
@@ -18,26 +51,8 @@ bool check(int x1, int x2, int z1, int z2)
 	return false;
 }
 
-
-int main(void)
+void print(string position, string chessPieceNum)
 {
-	int x1, x2, z1, z2;
-	cout << "Enter the horizontal position of the first chess piece: ";
-	cin >> x1;
-	cout << "Enter the vertical position of the first chess piece: ";
-	cin >> z1;
-	cout << "Enter the horizontal position of the second chess piece: ";
-	cin >> x2;
-	cout << "Enter the vertical position of the second chess piece: ";
-	cin >> z2;
-
-	if (check(x1,x2,z1,z2))
-	{
-		cout << "Beat each other." << endl;
-	}else 
-	{
-		cout << "NO beat each other." << endl;
-	}
-return 0;
+	cout << "Enter the " << position << 
+	 " position of the " << chessPieceNum << " chess piece: ";
 }
-
