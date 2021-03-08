@@ -7,15 +7,12 @@ using namespace std;
  * binarytodecimal.cpp: Convert the number from binary to decimal.
  * */
 
-const string B2D = "b2d";
-const string D2B = "d2b";
+#define B2D "b2d"
+#define D2B "d2b"
 
 int convertBinToDec(int bin, int *result);
-
 int convertDecToBin(int dec, int *result);
-
-bool check(char option, int number);
-
+bool isCheck(char option, int number);
 
 int main() {
     string option;
@@ -30,7 +27,7 @@ int main() {
         cout << "From binary to decimal. Enter your number: ";
         cin >> x;
 
-        if (check('b', x)) {
+        if (isCheck('b', x)) {
             convertBinToDec(x, &result);
         } else {
             cout << "You entered a non-binary number!" << endl;
@@ -40,7 +37,7 @@ int main() {
         cout << "From decimal to binary. Enter your number: ";
         cin >> x;
 
-        if (check('d', x)) {
+        if (isCheck('d', x)) {
             convertDecToBin(x, &result);
         } else {
             cout << "You entered a non-decimal number!" << endl;
@@ -82,7 +79,7 @@ int convertDecToBin(int dec, int *result) {
     return 0;
 }
 
-bool check(char option, int number) {
+bool isCheck(char option, int number) {
     string tmp;
 
     tmp.append(to_string(number));
@@ -104,4 +101,3 @@ bool check(char option, int number) {
         return false;
     }
 }
-
