@@ -8,15 +8,28 @@ using namespace std;
  * equilateral, rectangular, isosceles, or general.
  * */
 
-void inputAndCheck(double *x);
+bool isRectangular(double firstLeg, double secondLeg, double hypotenuse);
+
+void check(double *x);
 
 int main() {
     double a, b, c;
     string result;
 
-    inputAndCheck(&a);
-    inputAndCheck(&b);
-    inputAndCheck(&c);
+    cout << "Please, enter the value of the side of the triangle : ";
+    cin >> a;
+
+    check(&a);
+
+    cout << "Please, enter the value of the side of the triangle : ";
+    cin >> b;
+
+    check(&b);
+
+    cout << "Please, enter the value of the side of the triangle : ";
+    cin >> c;
+
+    check(&c);
 
     if ((a < b + c) and (b < a + c) and (c < a + b)) {
         result = "The triangle is general.";
@@ -25,9 +38,7 @@ int main() {
             result = "The triangle is equilateral.";
         } else if (a == b or a == c or b == c) {
             result = "The triangle is isosceles.";
-        } else if ((pow(a, 2) == pow(b, 2) + pow(c, 2)) or
-                   (pow(b, 2) == pow(a, 2) + pow(c, 2)) or
-                   (pow(c, 2) == pow(a, 2) + pow(b, 2))) {
+        } else if (isRectangular(a, b, c) or isRectangular(a, c, b) or isRectangular(b, c, a)) {
             result = "The triangle is rectangular";
         } else {}
 
@@ -38,10 +49,7 @@ int main() {
     return 0;
 }
 
-void inputAndCheck(double *x) {
-    cout << "Please, enter the value of the side of the triangle : ";
-    cin >> *x;
-
+void check(double *x) {
     while (*x < 0.0 || !cin) {
         cout << "Your input is wrong! Try again : ";
 
@@ -49,5 +57,13 @@ void inputAndCheck(double *x) {
         while (cin.get() != '\n') fflush(stdin);
 
         cin >> *x;
+    }
+}
+
+bool isRectangular(double firstLeg, double secondLeg, double hypotenuse) {
+    if (pow(firstLeg, 2) + pow(secondLeg, 2) == pow(hypotenuse, 2)) {
+        return true;
+    } else {
+        return false;
     }
 }

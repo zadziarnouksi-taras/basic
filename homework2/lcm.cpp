@@ -6,24 +6,31 @@ using namespace std;
  *lcm.cpp : LCM. Find the least common multiple of two natural numbers.
  * */
 
+void check(int *x);
 
-void inputAndCheck(int *x);
-int calcLCM(int a, int b);
+void calcGCD(int a, int b, int *result);
 
 int main() {
-    int a = 0, b = 0;
+    int a = 0, b = 0, gcd = 0;       //Greatest Common Dividend
 
-    inputAndCheck(&a);
-    inputAndCheck(&b);
-    calcLCM(a, b);
+    cout << "Please, enter first natural number: ";
+    cin >> a;
+
+    check(&a);
+
+    cout << "Please, enter second natural number: ";
+    cin >> b;
+
+    check(&b);
+
+    calcGCD(a, b, &gcd);
+
+    cout << "The least common multiple of " << a << " and " << b << " is " << a * b / gcd << endl;
 
     return 0;
 }
 
-void inputAndCheck(int *x) {
-    cout << "Please, enter natural number : ";
-    cin >> *x;
-
+void check(int *x) {
     while (*x < 0 || !cin) {
         cout << "Your input is wrong! Try again : ";
 
@@ -34,15 +41,10 @@ void inputAndCheck(int *x) {
     }
 }
 
-int calcLCM(int a, int b) {
-    int gcd = 0;                 //Greatest Common Dividend
-
-    for (int i = 1; i <= (a > b ? b : a); i++) {
+void calcGCD(int a, int b, int *result) {
+    for (int i = 1; i <= (a < b ? a : b); i++) {    //iterate to the smallest of two numbers
         if (a % i == 0 and b % i == 0) {
-            gcd = i;
+            *result = i;
         }
     }
-
-    cout << "Result is " << a * b / gcd << endl;
 }
-
