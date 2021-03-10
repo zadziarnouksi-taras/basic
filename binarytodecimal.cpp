@@ -10,19 +10,21 @@ using namespace std;
 #define B2D "b2d"
 #define D2B "d2b"
 
-int convertBinToDec(int bin, int *result);
-int convertDecToBin(int dec, int *result);
+int convertBinToDec(int bin, string *result);
+
+int convertDecToBin(int dec, string *result);
+
 bool isCheck(char option, int number);
 
 int main() {
-    string option;
-    int x, result = 0;
+    string option, result;
+    int x;
 
     cout << "Please, enter 'b2d' - if you want convert from binary to decimal"
-            ", d2b - if you want convert from decimal to binary." << endl;
+            ", d2b - if you want convert from decimal to binary.\nYour choose: ";
     cin >> option;
 
-    if (!option.compare(B2D)) {
+    if (option == B2D) {
         myFirstLabel:
         cout << "From binary to decimal. Enter your number: ";
         cin >> x;
@@ -33,7 +35,7 @@ int main() {
             cout << "You entered a non-binary number!" << endl;
             return -1;
         }
-    } else if (!option.compare(D2B)) {
+    } else if (option == D2B) {
         cout << "From decimal to binary. Enter your number: ";
         cin >> x;
 
@@ -55,26 +57,28 @@ int main() {
     return 0;
 }
 
-int convertBinToDec(int bin, int *result) {
+int convertBinToDec(int bin, string *result) {
     int i = 0;
+    int tmp;
 
     while (bin > 0) {
-        *result += ((bin % 10) * pow(2, i));
+        tmp += ((bin % 10) * pow(2, i));
         i++;
         bin = bin / 10;
     }
+    *result = to_string(tmp);
 
     return 0;
 }
 
-int convertDecToBin(int dec, int *result) {
+int convertDecToBin(int dec, string *result) {
     string tmp;
 
     while (dec > 0) {
         tmp.append(to_string(dec % 2));
         dec /= 2;
     }
-    *result = stoi(tmp);
+    *result = tmp;
 
     return 0;
 }
