@@ -9,26 +9,20 @@ using namespace std;
  * */
 
 bool isRectangular(double firstLeg, double secondLeg, double hypotenuse);
-
+void input(double *x);
 void check(double *x);
 
 int main() {
     double a, b, c;
     string result;
 
-    cout << "Please, enter the value of the side of the triangle : ";
-    cin >> a;
-
+    input(&a);
     check(&a);
 
-    cout << "Please, enter the value of the side of the triangle : ";
-    cin >> b;
-
+    input(&b);
     check(&b);
 
-    cout << "Please, enter the value of the side of the triangle : ";
-    cin >> c;
-
+    input(&c);
     check(&c);
 
     if ((a < b + c) and (b < a + c) and (c < a + b)) {
@@ -60,10 +54,11 @@ void check(double *x) {
     }
 }
 
+void input(double *x) {
+    cout << "Please, enter the value of the side of the triangle : ";
+    cin >> *x;
+}
+
 bool isRectangular(double firstLeg, double secondLeg, double hypotenuse) {
-    if (pow(firstLeg, 2) + pow(secondLeg, 2) == pow(hypotenuse, 2)) {
-        return true;
-    } else {
-        return false;
-    }
+    return pow(firstLeg, 2) + pow(secondLeg, 2) == pow(hypotenuse, 2);
 }
