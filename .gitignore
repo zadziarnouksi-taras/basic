@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Format .txt
+*.txt
