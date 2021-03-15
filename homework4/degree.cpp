@@ -6,9 +6,7 @@ using namespace std;
  *degree.cpp: DEGREE. Develop a function that raises x to the n power.
  * */
 
-void inputNumber(int *number);
-
-void inputDegree(int *degree);
+void input(int *x, string s);
 
 void check(int *x);
 
@@ -17,10 +15,10 @@ int exponentiation(int x, int n);
 int main() {
     int x, n, result;
 
-    inputNumber(&x);
+    input(&x, "number");
     check(&x);
 
-    inputDegree(&n);
+    input(&n, "power");
     check(&n);
 
     if (x == 0) {
@@ -45,17 +43,11 @@ int exponentiation(int x, int n) {
     } else {
         return x * exponentiation(x, n - 1);
     }
-
 }
 
-void inputNumber(int *number) {
-    cout << "Please, enter the number you want to raise to the power: ";
-    cin >> *number;
-}
-
-void inputDegree(int *degree) {
-    cout << "Enter the degree to which you want to raise the number: ";
-    cin >> *degree;
+void input(int *x, string s) {
+    cout << "Enter the "<< s <<": ";
+    cin >> *x;
 }
 
 void check(int *x) {
