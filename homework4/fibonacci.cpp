@@ -7,41 +7,43 @@ using namespace std;
 Find the dependency and develop a function that calculates the n-th term of the series.
  * */
 
-void input(int *x);
+int input(int x);
 
-void check(int *x);
+int check(int x);
 
 int calculate(int n);
 
 int main() {
-    int n;
+    int n = 0;
 
-    input(&n);
-    check(&n);
+    n = input(n);
+    n = check(n);
 
     cout <<"At the " << n << " position of the Fibonacci row is the number " << calculate(n) << endl;
 
     return 0;
 }
 
-void input(int *x) {
+int input(int x) {
     cout << "Please enter the position, number of the Fibonacci series: ";
-    cin >> *x;
+    cin >> x;
+    return x;
 }
 
-void check(int *x) {
-    while (*x < 1 || !cin) {
+int check(int x) {
+    while (x < 1 || !cin) {
         cout << "Your input is wrong! Try again : ";
 
         cin.clear();
         while (cin.get() != '\n') fflush(stdin);
 
-        cin >> *x;
+        cin >> x;
     }
+    return x;
 }
 
 int calculate(int n) {
-    int current = 0, previous, tmp;
+    int current = 0, previous = 0, tmp;
 
     for (int i = 1; i < n; i++) {
         if (current == 0) {

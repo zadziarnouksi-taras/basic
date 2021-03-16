@@ -6,18 +6,18 @@ using namespace std;
  * units.cpp: UNITS. Find all natural numbers up to m whose binary notation consists of ones.
  * */
 
-void input(int *x);
+int input(int x);
 
-void check(int *x);
+int check(int x);
 
 bool isConditionSatisfied(int x);
 
 
 int main() {
-    int x;
+    int x = 0;
 
-    input(&x);
-    check(&x);
+    x = input(x);
+    x = check(x);
 
     cout << "Result is ";
 
@@ -30,20 +30,22 @@ int main() {
     return 0;
 }
 
-void input(int *x) {
+int input(int x) {
     cout << "Please, enter the number: ";
-    cin >> *x;
+    cin >> x;
+    return x;
 }
 
-void check(int *x) {
-    while (*x < 1 || !cin) {
+int check(int x) {
+    while (x < 1 || !cin) {
         cout << "Your input is wrong! Try again : ";
 
         cin.clear();
         while (cin.get() != '\n') fflush(stdin);
 
-        cin >> *x;
+        cin >> x;
     }
+    return x;
 }
 
 bool isConditionSatisfied(int x) {

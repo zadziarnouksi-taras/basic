@@ -6,26 +6,27 @@ using namespace std;
  *degree.cpp: DEGREE. Develop a function that raises x to the n power.
  * */
 
-void input(int *x, string s);
+int input(int x, string s);
 
-void check(int *x);
+int check(int x);
 
 int exponentiation(int x, int n);
 
 int main() {
-    int x, n, result;
+    int x = 0, n = 0, result;
 
-    input(&x, "number");
-    check(&x);
 
-    input(&n, "power");
-    check(&n);
+    x = input(x, "number");
+    x = check(x);
+
+    n = input(n, "power");
+    n = check(n);
 
     if (x == 0) {
         result = 0;
-    } else if (x != 0 and n == 0) {
+    } else if (n == 0) {
         result = 1;
-    } else if (x != 0 and n == 1) {
+    } else if (n == 1) {
         result = x;
     } else {
         result = exponentiation(x, n);
@@ -45,18 +46,20 @@ int exponentiation(int x, int n) {
     }
 }
 
-void input(int *x, string s) {
-    cout << "Enter the "<< s <<": ";
-    cin >> *x;
+int input(int x, string s) {
+    cout << "Enter the " << s << ": ";
+    cin >> x;
+    return x;
 }
 
-void check(int *x) {
-    while (*x < 0 || !cin) {
+int check(int x) {
+    while (x < 0 || !cin) {
         cout << "Your input is wrong! Try again : ";
 
         cin.clear();
         while (cin.get() != '\n') fflush(stdin);
 
-        cin >> *x;
+        cin >> x;
     }
+    return x;
 }
