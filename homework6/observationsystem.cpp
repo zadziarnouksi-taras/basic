@@ -11,8 +11,6 @@ using namespace std;
 #define DISTANCE_BETWEEN_POINTS 1.0
 #define SYSTEM_HEIGHT_FROM_THE_GROUND 0
 
-void fillArray0(double array[], int capacity);
-
 double inputHeightValue(int position, double value);
 
 void printPointWithElevation(int number, double array[]);
@@ -26,10 +24,8 @@ bool isFirstBlindSpot(int counter);
 void printStartOfLine();
 
 int main() {
-    double map[LENGTH_OF_ARRAY + 1];
+    double map[LENGTH_OF_ARRAY + 1] = {0};
     double heightValue = 0;
-
-    fillArray0(map, LENGTH_OF_ARRAY);
 
     for (int i = 0; i < LENGTH_OF_ARRAY; ++i) {
         heightValue = inputHeightValue(i, heightValue);
@@ -43,12 +39,6 @@ int main() {
     calcOfBlindSpots(map);
 
     return 0;
-}
-
-void fillArray0(double array[], int capacity) {
-    for (int i = 0; i < capacity + 1; ++i) {
-        array[i] = 0;
-    }
 }
 
 double inputHeightValue(int position, double value) {
@@ -98,7 +88,7 @@ double calcDistance(int position) {
 }
 
 void printPointWithElevation(int number, double array[]) {
-    cout << '[' << number << "]= " << array[number] << ' ';
+    cout << '[' << number + 1 << "]= " << array[number] << ' ';
 }
 
 bool isFirstBlindSpot(int counter) {
@@ -108,5 +98,3 @@ bool isFirstBlindSpot(int counter) {
 void printStartOfLine() {
     cout << "Points in the blind spot :" << endl;
 }
-
-// maybe develop function that calculate of visibility if the vertex is higher than the system or lower
