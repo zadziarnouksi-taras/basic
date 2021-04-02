@@ -10,7 +10,7 @@ using namespace std;
  * */
 
 #define NUMBER_OF_PEOPLE_IN_LINE 10
-#define POSITION_RECRUIT_WHO_TURNED_LEFT 2
+#define POSITION_RECRUIT_WHO_TURNED_LEFT 8
 
 void fillArray(char array[]);
 
@@ -39,7 +39,7 @@ int main() {
 
         printLine(line);
 
-        for (int i = 1; i < NUMBER_OF_PEOPLE_IN_LINE; ++i) {
+        for (int i = 0; i < NUMBER_OF_PEOPLE_IN_LINE; ++i) {
             if (isOppositeEachOther(line, i)) {
                 turnAwayFromEachOther(line, i);
                 counter++;
@@ -69,10 +69,10 @@ void printSoundSignal() {
 }
 
 bool isOppositeEachOther(char line[], int position) {
-    return line[position - 1] == '>' and line[position] == '<';
+    return line[position] == '>' and line[position + 1] == '<';
 }
 
 void turnAwayFromEachOther(char line[], int position) {
-    line[position - 1] = '<';
-    line[position] = '>';
+    line[position] = '<';
+    line[position + 1] = '>';
 }
