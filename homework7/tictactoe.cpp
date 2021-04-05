@@ -45,10 +45,10 @@ int main() {
 
     printStart(isPlayer);
 
-
     while (!checkForWinner(field)) {
         if (!checkForPossibleMoves(field)) {
             cout << "Friendship won!!!" << endl;
+
             break;
         }
         while (true) {
@@ -76,14 +76,13 @@ int main() {
             } else {
                 if (isPlayer) {
                     printFieldState(field);
+
                     cout << "This field is busy! Enter another coordinate!" << endl;
                 }
             }
         }
     }
-
     printWinner(isPlayer);
-
 
     return 0;
 }
@@ -112,10 +111,10 @@ int randomNumber(int n) {
     return dis(gen);
 }
 
-
 int input(int x, string s) {
     cout << "Your " << s << " coordinate: ";
     cin >> x;
+
     return x;
 }
 
