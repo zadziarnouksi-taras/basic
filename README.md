@@ -30,7 +30,7 @@
 * [Discharge](https://github.com/zadziarnouksi-taras/basic/blob/main/homework5/discharge.cpp "Discharge") - performs and prints number inversion. For example: 1234 -> 4321
 * [Number Of Fate](https://github.com/zadziarnouksi-taras/basic/blob/main/homework5/numberOfFate.cpp "Number Of Fate") - finds and prints the fate number.
 
-**[ 15.03.2021 ]** ***Intermediate project***
+**[ 18.03.2021 ]** ***Intermediate project***
 
 * [Coffee Box](https://github.com/zadziarnouksi-taras/coffee-box "Coffee Box") - Espresso Biancci has been ordered the development of a menu management system for its LEI700 coffee machine. The device cookies three types of coffee: Espresso, Cappuccino, Latte.
 
