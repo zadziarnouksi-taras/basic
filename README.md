@@ -35,12 +35,12 @@
 * [Coffee Box](https://github.com/zadziarnouksi-taras/coffee-box "Coffee Box") - Espresso Biancci has been ordered the development of a menu management system for its LEI700 coffee machine. The device cookies three types of coffee: Espresso, Cappuccino, Latte.
 
 **[ 01.04.2021 ]**
-* Observation System (add link later) - finds areas (elevation points) that are invisible to the observer at the first point of the array.
-* Recruits (add link later) - army simulator. Further, each recruit acts as follows: he sees the face of a neighbor in front of him, he turns around in exactly a second. Eventually the turns will stop and the sergeant will beep.
+* [Observation System](https://github.com/zadziarnouksi-taras/basic/blob/main/homework6/observationsystem.cpp "Observation System") - finds areas (elevation points) that are invisible to the observer at the first point of the array.
+*  [Recruits](https://github.com/zadziarnouksi-taras/basic/blob/main/homework6/recruits.cpp "Recruits") - army simulator. Further, each recruit acts as follows: he sees the face of a neighbor in front of him, he turns around in exactly a second. Eventually the turns will stop and the sergeant will beep.
 
 **[ 05.04.2021 ]**
-* Clearance (add link later) - finds and prints the coordinates of the gaps in the cube.
-* Tic-Tac-Toe (add link later) - the familiar game of tic-tac-toe against the computer.
+* [Clearance](https://github.com/zadziarnouksi-taras/basic/blob/main/homework7/clearance.cpp "Clearance") - finds and prints the coordinates of the gaps in the cube.
+* [Tic-Tac-Toe](https://github.com/zadziarnouksi-taras/basic/blob/main/homework7/tictactoe.cpp "Tic-Tac-Toe") - the familiar game of tic-tac-toe against the computer.
 
 
 
