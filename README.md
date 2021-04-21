@@ -42,5 +42,7 @@
 * [Clearance](https://github.com/zadziarnouksi-taras/basic/blob/main/homework7/clearance.cpp "Clearance") - finds and prints the coordinates of the gaps in the cube.
 * [Tic-Tac-Toe](https://github.com/zadziarnouksi-taras/basic/blob/main/homework7/tictactoe.cpp "Tic-Tac-Toe") - the familiar game of tic-tac-toe against the computer.
 
-
-
+**[ 08.04.2021 ]**
+* [String](https://github.com/zadziarnouksi-taras/basic/blob/main/homework8/string.cpp "String") - develop standard functions for working with strings (strLen() - the function returns the length of the string( strCpy(), strCat(), strCmp(), etc.)
+* [Plus Minus](https://github.com/zadziarnouksi-taras/basic/blob/main/homework8/plusMinus.cpp "Plus Minus") - get a number and replace every even digit in the string with pluses, and every odd one with minus (in the size equal to the value of the digit).
+* [Field Of Miracles](https://github.com/zadziarnouksi-taras/basic/blob/main/homework8/fieldOfMiracles.cpp "Field Of Miracles") - program the game: open the letters, guess the word, at the end - Yakubovich's joke.
